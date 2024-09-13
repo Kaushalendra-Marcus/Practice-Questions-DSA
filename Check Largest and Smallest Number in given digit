@@ -1,0 +1,26 @@
+// Write a program to find the largest and smallest digits in a number.
+
+#include<iostream>
+using namespace std;
+int main(){
+        int number,temporary;
+        int largest=0;
+        int smallest=9;
+        cout<<"Enter your number : "<<endl;
+        cin>>number;
+        temporary=number;
+        while(temporary!=0){
+                int digit=temporary%10;
+                if(digit>largest){
+                        largest=digit;
+                }
+                if(digit<smallest){
+                        smallest=digit;
+
+                }
+                temporary /=10;
+        }
+        cout<<"The largest digit in given number is : "<<largest<<endl;
+        cout<<"The smallest digit in given number is : "<<smallest<<endl;
+        return 0;
+}
