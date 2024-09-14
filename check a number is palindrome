@@ -1,0 +1,28 @@
+//Write a program to check a number is palindrome
+
+
+
+#include<iostream>
+using namespace std;
+int main(){
+        int number , assume_no;
+        int store_no =0;
+        int new_number=0;
+        cout<<"Enter your number : "<<endl;
+        cin>>number;
+        assume_no=number;
+        while(assume_no!=0){
+                new_number= assume_no%10;
+                store_no= (store_no*10) + new_number;
+                assume_no/=10;
+        }
+        
+        if(store_no==number){
+                cout<<"this is palindrome no.";
+        }
+        else{
+                cout<<"this is not ";
+        }       
+        return 0;
+}
+
