@@ -1,0 +1,33 @@
+// Check a number is strong number
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int n, remain, a, b;
+    int sum = 0, product = 1;
+    
+    for (n = 1; n <= 1000; n++) {
+        remain = n;
+        sum = 0;
+        
+        while (remain > 0) {
+            a = remain % 10;   // Get the last digit of the number
+            product = 1;
+            
+            for (int i = 1; i <= a; i++) {
+                product *= i;   // Calculate factorial of the digit
+            }
+            
+            sum += product;     // Add the factorial to the sum
+            remain /= 10;       // Remove the last digit from the number
+        }
+        
+        if (sum == n) {         // If sum of factorials equals the number
+            cout << "This is a strong number: " << n << endl;
+        } 
+    }
+
+    return 0;
+}
