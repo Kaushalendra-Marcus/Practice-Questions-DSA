@@ -1,0 +1,26 @@
+// Check given number is present in an array
+
+#include <iostream>
+using namespace std;
+
+bool binary_check(int arr[], int size, int key) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == key) {
+            cout << "Key is found: " << key << endl;
+            return true;
+        }
+    }
+    cout << "Key is not found." << endl;
+    return false;
+}
+
+int main() {
+    int size, arr[1000];
+    cout << "Enter the size of array: ";
+    cin >> size;
+    cout << "Enter the values of array: ";
+    for (int i = 0; i < size; i++) cin >> arr[i];
+    binary_check(arr, size, 120); // You can replace 120 with any value or take input for the key
+
+    return 0;
+}
