@@ -1,0 +1,24 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int unique(const vector<int>& array ,int n){
+    int num=0;
+    for(int i=0;i<n;i++){
+        num^=array[i];
+    }
+    return num;
+}
+int main(){
+    int size;
+    cout<<"Enter the size of array : "<<endl;
+    cin>>size;
+    vector<int> inputarr(size);
+    cout << "Enter the elements of the array: " << endl;
+    for (int i = 0; i < size; i++) {
+        cin>>inputarr[i]; 
+    }
+    int unique_number=unique(inputarr,size);
+    cout<<"the unique number is: "<<unique_number;
+
+return 0;
+}
