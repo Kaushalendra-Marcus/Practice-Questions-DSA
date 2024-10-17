@@ -1,0 +1,27 @@
+// Peak Element in rotated array
+
+#include<iostream>
+using namespace std;
+int peak_element(int arr[],int size){
+    int start =0;
+    int end = size-1;
+    int ans =-1;
+    int mid= start + (end - start)/2; // to prevent stack overflow
+        while (start<end)
+        {
+            if(arr[mid]>arr[start]){
+                start = mid+1;
+            }
+            else{
+                end=mid;
+            }
+            mid= start + (end - start)/2;
+        }
+        return start;       
+    }
+
+int main(){
+    int arr[10] ={33,36,42,49,2,3,6,8,26,29};
+    cout<<"peak element is at : "<<peak_element(arr,10)<<endl;
+    return 0;
+}
