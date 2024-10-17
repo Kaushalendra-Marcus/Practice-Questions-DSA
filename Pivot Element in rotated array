@@ -1,4 +1,4 @@
-// Peak Element in rotated array
+// Pivot Element in rotated array
 
 #include<iostream>
 using namespace std;
