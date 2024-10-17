@@ -1,0 +1,24 @@
+//Find HCF and LCM of given two numbers 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int hcf=1;
+int a=20, b=30;
+
+int main () {
+         for(int i =1;i<a;i++){
+             if(a%i==0 && b%i==0){
+                 hcf=i;
+             }
+         }
+         cout << "HCF IS " <<hcf <<endl;
+         int product =hcf;
+         int left = a/hcf;
+         product *=left;
+         int lefttwo = b/hcf;
+         product *=lefttwo;
+         cout << "LCM is " << product<<endl;
+
+return 0;
+}
