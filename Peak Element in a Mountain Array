@@ -1,0 +1,28 @@
+// What is Mountain Array- a mountain array looks like a mountain with a single peak in the middle, where the numbers first go up and then go down. And it should have at least 3 elements. 
+
+
+#include<iostream>
+using namespace std;
+int peak_element(int arr[],int size,int key){
+    int start =0;
+    int end = size-1;
+    int ans =-1;
+    int mid= start + (end - start)/2; // to prevent stack overflow
+        while (start<end)
+        {
+            if(arr[mid]<arr[mid+1]){
+                start=mid+1;
+            } 
+            else{
+                end = mid;
+            }        
+            mid= start + (end - start)/2;
+        }
+        return start;       
+    }
+
+int main(){
+    int arr[8] ={2,3,6,8,26,29,13,6};
+    cout<<"peak element is: "<<peak_element(arr,8,6)<<endl;
+    return 0;
+}
