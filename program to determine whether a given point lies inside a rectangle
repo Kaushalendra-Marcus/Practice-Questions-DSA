@@ -1,0 +1,38 @@
+//program to determine whether a given point lies inside a rectangle. 
+#include<iostream>
+using namespace std;
+struct point {
+        int x,y;
+    };
+
+    struct rectangle{
+        point lower_left;
+        point top_right;
+
+    };
+
+    bool isInside(rectangle rect , point p){
+    if(p.x > rect.lower_left.x && p.x < rect.top_right.x && p.y>rect.lower_left.y && p.y < rect.top_right.y){
+        return true;
+    }
+    return false;
+    }
+
+int main(){
+    rectangle rect;
+    point p;
+    cout<<"Enter the co-ordinates of rectangle of lower bottom point : "<<endl;
+    cin>>rect.lower_left.x>>rect.lower_left.y;
+    cout<<"Enter the co-ordinates of rectangle of top right point : "<<endl;
+    cin>>rect.top_right.x>>rect.top_right.y;
+    cout<<"Enter the points to check : "<<endl;
+    cin>>p.x>>p.y;
+    if(isInside(rect,p)){
+        cout<<"the given points are inside the rectangle"<<endl;
+    }
+    else{
+        cout<<"the given points lies outside the rectangle"<<endl;
+    }
+    return 0;
+}
+ 
