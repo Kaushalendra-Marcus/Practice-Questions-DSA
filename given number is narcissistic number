@@ -1,0 +1,30 @@
+//CHECK NARCISSISTIC NUMBER
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main(){
+    int number, copy_number, sum = 0;
+    cout << "Enter the number: ";
+    cin >> number;
+
+    int length_is = to_string(number).length();
+    copy_number = number;
+
+    // Calculate the sum of digits raised to the power of the number's length
+    while(copy_number > 0){
+        int digit = copy_number % 10;
+        sum += pow(digit, length_is);
+        copy_number /= 10;
+    }
+
+    // Output results
+    if(sum == number){
+        cout << number << " is a narcissistic number." << endl;
+    } else {
+        cout << number << " is not a narcissistic number." << endl;
+    }
+
+    return 0;
+}
