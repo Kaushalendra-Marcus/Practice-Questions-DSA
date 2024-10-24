@@ -1,1 +1,30 @@
-this is code here
+#include<iostream>
+#include<string>
+#include<sstream>
+#include<vector>
+using namespace std;
+string sentance,word;
+int length,high=0,sum=0,position=-1,count=0;
+vector<string> arr_words;
+int main(){
+    cout<<"Enter the sentance : ";
+    getline(cin,sentance);
+    stringstream brk(sentance);
+    while(brk>>word){
+        length= word.length();
+        sum +=length;
+        count++;
+        if(length>high){
+            high=length;
+            position = count-1;
+        }
+        arr_words.push_back(word);
+    }
+    if(position!=0){
+        cout<<"the longest word is of length is: "<<high<<endl;
+        cout<<"the longest word is: "<<arr_words[position]<<endl;
+    }
+    cout<<"The total number of words are: "<<sum<<endl;
+    return 0;
+}
+
