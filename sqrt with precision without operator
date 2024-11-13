@@ -1,0 +1,42 @@
+//sqrt with precision without operator
+
+#include<iostream>
+using namespace std;
+long long int sqrt_num(int num){
+        long long int s=0,e=num, ans=-1;
+        long long int mid= s + (e-s)/2;
+        while(s<=e){
+                long long int square= mid*mid;
+                if(square==num){
+                        return  mid;
+                }
+                else if (square<num){
+                        s = mid+1;
+                        ans =mid; 
+                }
+                else {
+                        e = mid-1;
+                }
+                mid = s + (e-s)/2;
+        }  
+        return ans;
+}
+double precision(int n ,int precision_num, int temp){
+        double factor =1;
+        double ans = temp;
+        for(int i=0;i<precision_num;i++ ){
+                factor = factor/10;
+                for(double j=ans; j*j<n; j = j+factor){
+                ans = j;
+        }
+        }
+        return ans;
+
+}
+int main(){
+        int number;
+        cout<<"enter the number "<<endl;
+        cin>>number;
+        int temp_sol = sqrt_num(number);
+        cout<<"sqrt is is "<<precision(number,3,temp_sol);
+}
